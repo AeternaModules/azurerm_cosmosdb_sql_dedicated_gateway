@@ -1,3 +1,7 @@
+output "cosmosdb_sql_dedicated_gateways_id" {
+  description = "Map of id values across all cosmosdb_sql_dedicated_gateways, keyed the same as var.cosmosdb_sql_dedicated_gateways"
+  value       = { for k, v in azurerm_cosmosdb_sql_dedicated_gateway.cosmosdb_sql_dedicated_gateways : k => v.id }
+}
 output "cosmosdb_sql_dedicated_gateways_cosmosdb_account_id" {
   description = "Map of cosmosdb_account_id values across all cosmosdb_sql_dedicated_gateways, keyed the same as var.cosmosdb_sql_dedicated_gateways"
   value       = { for k, v in azurerm_cosmosdb_sql_dedicated_gateway.cosmosdb_sql_dedicated_gateways : k => v.cosmosdb_account_id }
